@@ -1,0 +1,175 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <nav class="navbar navbar-expand-lg ">
+      <a class="navbar-brand" href="#">FOODIEDELIGHT Admin</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Empty collapse content to demonstrate main navbar with toggler -->
+      </div>
+    </nav>
+
+
+    <!-- Left Sidebar -->
+    <div class="col-md-3 bg-dark text-white p-4" style="min-height: 100vh;">
+      <img src="https://img.freepik.com/premium-vector/food-delivery-service-concept_24640-7301.jpg" alt="Descriptive Text" class="img-fluid small-img">
+      <!-- Admin Email -->
+      <h5>Admin Gmail</h5>
+      <p>FOODIEDELIGHT.com</p>
+
+      <!-- Navigation Links -->
+      <ul class="navbar-nav flex-column">
+        <li class="nav-item active">
+          <a class="nav-link text-white" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Reports</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9">
+      <!-- Main Navigation Bar -->
+      
+
+      <!-- Main Content Area -->
+      <div class="container mt-4">
+        <h2>Restaurants List</h2>
+        <!-- Button to navigate to the form for adding a new restaurant -->
+        <div class="align-right">
+          <button (click)="navigateToForm()" class="btn btn-primary">Add New Restaurant</button>
+        </div>
+        
+
+        <!-- Search Bar with Icon -->
+        <div class="form-group mb-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-search"></i> <!-- Font Awesome search icon -->
+              </span>
+            </div>
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Search by name or location" 
+              [(ngModel)]="searchQuery"
+              (ngModelChange)="filterRestaurants()"
+            />
+          </div>
+        </div>
+
+        <!-- Restaurant Table -->
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Sr.No</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Location</th>
+              <th>Contact Number</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let restaurant of paginatedRestaurants">
+              <td>{{ restaurant.id }}</td>
+              <td><img [src]="restaurant.imageUrl" alt="Restaurant Image" width="50"></td>
+              <td>{{ restaurant.name }}</td>
+              <td>{{ restaurant.description }}</td>
+              <td>{{ restaurant.location }}</td>
+              <td>{{ restaurant.contactNumber }}</td>
+              <td>{{ restaurant.email }}</td>
+              <td>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button (click)="startEdit(restaurant)" class="btn btn-info btn-sm">Edit</button>
+                  <button (click)="deleteRestaurant(restaurant.id)" class="btn btn-danger btn-sm">Delete</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+       
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+          <span>Page {{ currentPage }} of {{ totalPages }}</span>
+          <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+        </div>
+
+         <!-- fields for editing -->
+        <div *ngIf="selectedRestaurant">
+          <h3>Edit Restaurant</h3>
+          <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+
+            <div>
+              <label for="imageUrl">Image URL</label>
+              <input id="imageUrl" formControlName="imageUrl" class="form-control">
+              <div *ngIf="restaurantForm.get('imageUrl')?.invalid && restaurantForm.get('imageUrl')?.touched">
+                Image URL is required.
+              </div>
+            </div>
+
+            <div>
+              <label for="name">Restaurant Name</label>
+              <input id="name" formControlName="name" class="form-control">
+              <div *ngIf="restaurantForm.get('name')?.invalid && restaurantForm.get('name')?.touched">
+                Name is required.
+              </div>
+            </div>
+      
+           
+            <div>
+              <label for="description">Description</label>
+              <input id="description" formControlName="description" class="form-control">
+              <div *ngIf="restaurantForm.get('description')?.invalid && restaurantForm.get('description')?.touched">
+                Description is required.
+              </div>
+            </div>
+            <div>
+              <label for="location">Location</label>
+              <input id="location" formControlName="location" class="form-control">
+              <div *ngIf="restaurantForm.get('location')?.invalid && restaurantForm.get('location')?.touched">
+                Location is required.
+              </div>
+            </div>
+            <div>
+              <label for="contactNumber">Contact Number</label>
+              <input id="contactNumber" formControlName="contactNumber" class="form-control">
+              <div *ngIf="restaurantForm.get('contactNumber')?.invalid && restaurantForm.get('contactNumber')?.touched">
+                Contact Number is required.
+              </div>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" formControlName="email" class="form-control">
+              <div *ngIf="restaurantForm.get('email')?.invalid && restaurantForm.get('email')?.touched">
+                Valid email is required.
+              </div>
+            </div>
+  
+            <button type="submit" [disabled]="restaurantForm.invalid" class="btn btn-success">Save</button>
+            <button type="button" (click)="cancelEdit()" class="btn btn-secondary">Cancel</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

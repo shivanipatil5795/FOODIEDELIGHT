@@ -1,0 +1,112 @@
+{
+  "restaurants": [
+    {
+      "id": "1",
+      "imageUrl": "https://rishikeshcamps.in/wp-content/uploads/2023/05/restaarant.jpg",
+      "name": "The Great Italian",
+      "description": "A cozy place with authentic Italian cuisine.",
+      "location": "123 Main Street, City",
+      "contactNumber": "9874589666",
+      "email": "info@greatitalian.com"
+    },
+    {
+      "id": "2",
+      "name": "Sushi Express",
+      "description": "Fast, fresh, and delicious sushi.",
+      "location": "456 Market Street, City",
+      "contactNumber": "9874589654",
+      "email": "contact@sushiexpress.com",
+      "imageUrl": "https://assets.architecturaldigest.in/photos/6385cf3311f0276636badfb6/16:9/w_2560%2Cc_limit/DSC_8367-Edit-W.png"
+    },
+    {
+      "id": "3",
+      "name": "Burger Palace",
+      "description": "The best burgers in town.",
+      "location": "789 Elm Street, City",
+      "contactNumber": "9874589654",
+      "email": "support@burgerpalace.com",
+      "imageUrl": "https://techcrunch.com/wp-content/uploads/2015/08/shutterstock_237882754.jpg"
+    },
+    {
+      "id": "4",
+      "imageUrl": "https://assets.cntraveller.in/photos/651e65983734f323ef3d37fe/16:9/w_7936,h_4464,c_limit/SWING-9.jpg",
+      "name": "The Great Italian",
+      "description": "A cozy place with authentic Italian cuisine.",
+      "location": "123 Main Street, City",
+      "contactNumber": "7777777777",
+      "email": "info@greatitalian.com"
+    },
+    {
+      "id": "5",
+      "name": "Sushi Express",
+      "description": "Fast, fresh, and delicious sushi.",
+      "location": "456 Market Street, City",
+      "contactNumber": "9874589654",
+      "email": "contact@sushiexpress.com",
+      "imageUrl": "https://assets.bonappetit.com/photos/610aa6ddc50e2f9f7c42f7f8/master/pass/Savage-2019-top-50-busy-restaurant.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Burger Palace",
+      "description": "The best burgers in town.",
+      "location": "789 Elm Street, City",
+      "contactNumber": "9874589654",
+      "email": "support@burgerpalace.com",
+      "imageUrl": "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2stcGYtcG9tLTEyNDIuanBn.jpg"
+    },
+    {
+      "id": "7",
+      "name": "The Great Italian",
+      "description": "A cozy place with authentic Italian cuisine.",
+      "location": "123 Main Street, City",
+      "contactNumber": "1234567899",
+      "email": "info@greatitalian.com",
+      "imageUrl": "https://5.imimg.com/data5/SELLER/Default/2022/12/AU/YD/QA/55496844/restaurant-interior-designers.jpg"
+    },
+    {
+      "id": "9",
+      "name": "way",
+      "description": "siuth indian",
+      "location": "baner",
+      "contactNumber": "9874568547",
+      "email": "sg@gmail.com",
+      "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/5b/26/92/punjab.jpg?w=1200&h=-1&s=1"
+    },
+    {
+      "id": "10",
+      "name": "cgn",
+      "description": "cn",
+      "location": "vb",
+      "contactNumber": "9874557895",
+      "email": "nvh@gmail.com",
+      "imageUrl": "https://cdn.magicdecor.in/com/2023/09/29161108/3d-wallpaper-restaurant-mockup-710x488.jpg"
+    },
+    {
+      "id": "a2f0",
+      "name": "Desai Restaurant",
+      "description": "Multicuisine",
+      "location": "Baner",
+      "contactNumber": "9874589654",
+      "email": "desai@gmail.com",
+      "imageUrl": "https://5.imimg.com/data5/SELLER/Default/2022/12/XU/VN/IX/14177800/fast-food-restaurant-interior-designer.jpg"
+    },
+    {
+      "id": "",
+      "imageUrl": "https://media.istockphoto.com/id/1446478827/photo/a-chef-is-cooking-in-his-restaurants-kitchen.jpg?s=612x612&w=0&k=20&c=jwKJmGErrLe2XsTWNYEEyiNicudYVA4j8jvnTiJdp58=",
+      "name": "abc",
+      "description": "abc",
+      "location": "pune",
+      "contactNumber": "9875478956",
+      "email": "abc@gmail.com"
+    },
+    {
+      "id": "",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV3V_QmFRmB8xPPSOmShms0tMMMAH1G9i7pg&s",
+      "name": "sdf",
+      "description": "af",
+      "location": "af",
+      "contactNumber": "9854687598",
+      "email": "jh@gmail.com"
+    }
+  ]
+}

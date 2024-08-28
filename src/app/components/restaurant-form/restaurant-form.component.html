@@ -1,0 +1,54 @@
+<div class="container">
+  
+  <h2>Add Restaurant</h2>
+  <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="imageUrl">Image URL</label>
+      <input id="imageUrl" formControlName="imageUrl" class="form-control" />
+      <div *ngIf="restaurantForm.get('imageUrl')?.invalid && restaurantForm.get('imageUrl')?.touched" class="text-danger">
+        Image URL is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Restaurant Name</label>
+      <input id="name" formControlName="name" class="form-control" />
+      <div *ngIf="restaurantForm.get('name')?.invalid && restaurantForm.get('name')?.touched" class="text-danger">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input id="description" formControlName="description" class="form-control" />
+      <div *ngIf="restaurantForm.get('description')?.invalid && restaurantForm.get('description')?.touched" class="text-danger">
+        Description is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input id="location" formControlName="location" class="form-control" />
+      <div *ngIf="restaurantForm.get('location')?.invalid && restaurantForm.get('location')?.touched" class="text-danger">
+        Location is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="contactNumber">Contact Number</label>
+      <input id="contactNumber" formControlName="contactNumber" class="form-control" />
+      <div *ngIf="restaurantForm.get('contactNumber')?.invalid && restaurantForm.get('contactNumber')?.touched" class="text-danger">
+        Contact Number is required and must be a 10-digit number.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" class="form-control" />
+      <div *ngIf="restaurantForm.get('email')?.invalid && restaurantForm.get('email')?.touched" class="text-danger">
+        A valid email is required.
+      </div>
+    </div>
+   
+   
+    <button type="submit" class="btn btn-success" [disabled]="restaurantForm.invalid">Add Restaurant</button>
+  </form>
+  <button type="button" (click)="navigateToList()" class="btn btn-custom">Back to List</button>
+
+</div>
